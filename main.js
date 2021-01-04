@@ -1,10 +1,7 @@
-const width = 500
-const height = 500
-
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
-canvas.width = width
-canvas.height = height
+makeFullScreen()
+addEventListener('resize', makeFullScreen)
 
 loop()
 
@@ -22,7 +19,7 @@ function randomNumber() {
 }
 
 function createRandomImage() {
-  const newImageData = new ImageData(width, height)
+  const newImageData = new ImageData(canvas.width, canvas.height)
   for (let i = 0; i < newImageData.data.length; i += 4) {
     newImageData.data[i] = Math.random() * 255
     newImageData.data[i + 1] = Math.random() * 255
@@ -30,4 +27,9 @@ function createRandomImage() {
     newImageData.data[i + 3] = 255
   }
   return newImageData
+}
+
+function makeFullScreen() {
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
 }
