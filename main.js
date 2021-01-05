@@ -11,7 +11,14 @@ loop()
 function loop() {
   const newImage = createRandomImage()
   ctx.putImageData(newImage, 0, 0)
-  setTimeout(() => requestAnimationFrame(loop), 10)
+  setTimeout(() => requestAnimationFrame(loop), randomNumber())
+}
+
+function randomNumber() {
+  const rand = Math.random()
+  if (rand > 0.3) return 100
+  else if (rand >= 0.3 && rand < 0.6) return 200
+  else return 10
 }
 
 function createRandomImage() {
