@@ -16,9 +16,9 @@ function loop() {
 
 function randomNumber() {
   const rand = Math.random()
-  if (rand > 0.3) return 100
-  else if (rand >= 0.3 && rand < 0.6) return 200
-  else return 10
+  if (rand > 0.3) return 200
+  else if (rand >= 0.3 && rand < 0.6) return 10
+  else return 400
 }
 
 function createRandomImage() {
