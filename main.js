@@ -1,5 +1,5 @@
-const width = 500
-const height = 500
+const width = 1920
+const height = 1080
 
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
@@ -16,9 +16,9 @@ function loop() {
 
 function randomNumber() {
   const rand = Math.random()
-  if (rand > 0.3) return 200
-  else if (rand >= 0.3 && rand < 0.6) return 10
-  else return 400
+  if (rand < 0.3) return 200
+  else if (rand >= 0.3 && rand < 0.6) return 800
+  else return 10
 }
 
 function createRandomImage() {
